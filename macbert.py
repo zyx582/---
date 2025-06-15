@@ -56,7 +56,7 @@ class HateSpeechDataset(Dataset):
         item = self.data[idx]
         text = item["content"]
 
-        # 从训练数据中获取标签（如果有）
+        # 从训练数据中获取标签
         if "label" in item:
             label = self.label_map.get(item["label"], 5)  # 默认为non-hate
         else:
