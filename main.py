@@ -118,7 +118,7 @@ for item in train_data:
     item["label"] = label_map.get(group, 4)  # Others作为默认
 
 
-# 定义数据集类（保持不变）
+# 定义数据集类
 class HateSpeechDataset(Dataset):
     def __init__(self, data, tokenizer, max_length=128):
         self.data = data
@@ -153,7 +153,7 @@ class HateSpeechDataset(Dataset):
 # 创建数据集
 train_dataset = HateSpeechDataset(train_data, tokenizer)
 
-# 训练参数（保持不变）
+# 训练参数
 training_args = TrainingArguments(
     output_dir="./results",
     num_train_epochs=10,
